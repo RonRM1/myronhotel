@@ -1,22 +1,22 @@
-var DataTypes = require("sequelize").DataTypes;
-var _clientes = require("./clientes");
-var _hoteles = require("./hoteles");
-var _reservas = require("./reservas");
+const DataTypes = require("sequelize").DataTypes;
+const _Clientes = require("./clientes");
+const _Hoteles = require("./hoteles");
+const _Reservas = require("./reservas");
 
 function initModels(sequelize) {
-  var clientes = _clientes(sequelize, DataTypes);
-  var hoteles = _hoteles(sequelize, DataTypes);
-  var reservas = _reservas(sequelize, DataTypes);
+  const Clientes = _Clientes(sequelize, DataTypes);
+  const Hoteles = _Hoteles(sequelize, DataTypes);
+  const Reservas = _Reservas(sequelize, DataTypes);
 
-  reservas.belongsTo(clientes, { as: "id_cliente_cliente", foreignKey: "id_cliente"});
-  clientes.hasMany(reservas, { as: "reservas", foreignKey: "id_cliente"});
-  reservas.belongsTo(hoteles, { as: "id_hotel_hotele", foreignKey: "id_hotel"});
-  hoteles.hasMany(reservas, { as: "reservas", foreignKey: "id_hotel"});
+  Reservas.belongsTo(Clientes, { as: "id_cliente_cliente", foreignKey: "id_cliente"});
+  Clientes.hasMany(Reservas, { as: "reservas", foreignKey: "id_cliente"});
+  Reservas.belongsTo(Hoteles, { as: "id_hotel_hotele", foreignKey: "id_hotel"});
+  Hoteles.hasMany(Reservas, { as: "reservas", foreignKey: "id_hotel"});
 
   return {
-    clientes,
-    hoteles,
-    reservas,
+    Clientes,
+    Hoteles,
+    Reservas,
   };
 }
 module.exports = initModels;
