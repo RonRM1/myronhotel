@@ -1,3 +1,4 @@
+// https://myronhotel-production.up.railway.app/users
 const router = require("express").Router();
 
 // const clientesRouter = require('./routes/clientes');
@@ -21,15 +22,15 @@ const router = require("express").Router();
 // router.use("/reserva/id", reservaRouter);//id reserva
 
 const indexRouter = require('./routes/index');
-const clienteRouter = require('./routes/clientes');
+const clientesRouter = require('./routes/clientes');
 const reservasRouter = require('./routes/reservas');
 
 
 
 router.use('/', indexRouter);//clientes
-router.use('/clientes', clienteRouter);//id cliente
-router.use('/reservas', clienteRouter);//id cliente
-router.use('/hoteles', reservasRouter);//id cliente
+router.use('/clientes', clientesRouter);//id cliente
+router.use('/reservas', reservasRouter);
+// router.use('/hoteles', reservasRouter);
 
 
 
