@@ -13,12 +13,26 @@ clientesController.getAll = async (req, res) => {
     });
   }
 };
+
 //id de cliente
-clientesController.findByPk = (req, res) => {
+clientesController.getById = async (req, res) => {
   const id = req.params.id;
-  Clientes.findByPk(id).then((data) => {
-    res.send(data);
-  });
+
+  try {
+    const data = await Clientes.findByPk(id, {});
+
+    if (data) {
+      res.json(data);
+    } else {
+      res.status(404).send({
+        message: `Cannot find cliente with id=${id}`,
+      });
+    }
+  } catch (error) {
+    res.status(500).send({
+      message: `Error retrieving cliente with id=${id}.`,
+    });
+  }
 };
 
 //nombre de cliente
@@ -89,7 +103,6 @@ clientesController.getByPhone = async (req, res) => {
     });
   }
 };
-
 
 //Email
 clientesController.getByEmail = async (req, res) => {

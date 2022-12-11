@@ -4,15 +4,16 @@ var router = express.Router();
 
 const reservasController = require("../controllers/reservas-controller");
 
-/* GET clientes listing. */
-// router.get("/", reservasController.findAll);
+/* GET reservas listing. */
 router.get("/", reservasController.getAll);
-// router.get("/reservas/", reservasController.getAll);
 
-// /* GET cliente by id. */
+// /* GET reserva by id. */
 router.get("/:id", reservasController.getById);
 
-// /* GET users by name. */
-// router.get("/name/:nombre", reservasController.getByName);
+//fecha de entrada
+router.get("/checkin/:fecha_entrada", reservasController.getCheckIn);
+
+//fecha de salida
+router.get("/checkout/:fecha_salida", reservasController.getCheckOut);
 
 module.exports = router;

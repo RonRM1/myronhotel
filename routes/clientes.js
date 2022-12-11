@@ -5,10 +5,10 @@ var router = express.Router();
 const clientesController = require("../controllers/clientes-controller");
 
 /* GET clientes listing. */
-router.get("/", clientesController.getAll); // reservas?nombre=ronny&dni=15520564C& 
+router.get("/", clientesController.getAll);
 
 /* GET cliente by id. */
-router.get("/:id", clientesController.findByPk);
+router.get("/:id", clientesController.getById);
 
 /* GET cliente by name. */
 router.get("/name/:nombre", clientesController.getByName);
@@ -21,7 +21,6 @@ router.get("/phone/:telefono", clientesController.getByPhone);
 
 //email
 router.get("/email/:Email", clientesController.getByEmail);
-
 
 // buscar por id cliente toda sus reservas
 router.get("/:id/reservas", clientesController.getReservas);
