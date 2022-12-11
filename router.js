@@ -1,4 +1,3 @@
-// https://myronhotel-production.up.railway.app/users
 const router = require("express").Router();
 
 const indexRouter = require("./routes/index");
