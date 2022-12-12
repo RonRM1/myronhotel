@@ -1,6 +1,10 @@
-# Proyecto 4 Buscador de reservas de una Agencia de Viajes. (myronhotel).
+# Proyecto 4 API buscador para reservas de hotel de una Agencia de Viajes. (myronhotel).
 
 Geekshubs Academy: FULL STACK DEVELOPER proyectyo realizado por [Ronny Rojas M.](mailto:ronny3030@gmail.com)
+
+### DEMO
+
+https://myronhotel-production.up.railway.app/
 
 
 ## Descripcion
@@ -23,22 +27,100 @@ El buscador desarrollado permite buscar por cualquiera de estos campos:
 
 ![screenshot](img/diagrama.png)
 
+## End points
+
+#####CLIENTES
+
+| Metodo  | ruta | descripcion|
+| ------------- | ------------- | ------------- |
+| Get | /clientes  | lista de clientes  |
+| Get  | /clientes/:id  | cliente por id  |
+| Get | /clientes/name/:nombre   | cliente por nombre  |
+| Get  | /clientes/DNI/:DNI   |  cliente por DNI |
+| Get | /clientes/phone/:telefono  | clientes por telefono  |
+| Get | /clientes/email/:Email  | clientes por Email  |
+| Get | /clientes/:id/reservas  | buscar por id cliente historial de reservas  |
+| Get | /clientes/:id/reservas/hoteles  | busca id cliente historial de hoteles  |
+
+
+
+<!-- * GET lista clientes.
+/clientes
+
+* GET cliente por id.
+/clientes/:id
+
+* GET cliente por nombre.
+/clientes/name/:nombre
+
+* GET DNI
+/clientes/DNI/:DNI
+
+* GET telefono
+/clientes/phone/telefono
+
+* GET email
+/clientes/email/Email
+
+* GET buscar por id cliente toda sus reservas
+/clientes/:id/reservas
+
+* GET busca id clientes su historial de hoteles
+/clientes/:id/reservas/hoteles -->
+
+#####RESERVAS
+
+| Metodo  | ruta | descripcion|
+| ------------- | ------------- | ------------- |
+| Get | /reservas  | lista de reservas  |
+| Get  | /reservas/:id  | reserva por id  |
+| Get | /reservas/checkin/:fecha_entrada   | reserva por fecha checkin  |
+| Get  | /clientes/checkout/:fecha_salida   | reserva por fecha checkout |
+
+<!-- * GET lista reservas
+/reservas
+
+* GET reserva por id.
+/reservas/id
+
+* GET fecha de entrada
+/reservas/checkin/fecha_entrada
+
+* GET fecha de salida
+/reservas/checkout/fecha_salida -->
+
+#####HOTELES
+
+| Metodo  | ruta | descripcion|
+| ------------- | ------------- | ------------- |
+| Get | /hoteles  | lista de hoteles  |
+| Get  | /hoteles/:id  | hotel por id  |
+
+<!-- * GET lista hoteles 
+/hoteles/
+
+* GET hotel por id.
+/hoteles/id -->
 
 ### Tecnologias utilizadas
 
-El diseño de la API se realizo utilizando Express.
-Se Utilizo Sequelize ORM.
-BBDD implementada en Mysql.
-Se incluyeron seeders.
-
-### Puesta en marcha
+* El diseño de la API se realizo utilizando Express.
+* Node.
+* Se Utilizo Sequelize ORM.
+* BBDD implementada en Mysql.
+<!-- * Se incluyeron seeders. -->
+### Instalación 
 
 ```
-npm instal
+npm install
+```
+
+### Uso
+
+```
 npm run dev
 ```
+comando para ejecutar en desarrollo, luego navegar a http//localhost:3000.
 
 
-## Usage
 
-https://myronhotel-production.up.railway.app/clientes
