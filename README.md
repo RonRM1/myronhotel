@@ -19,6 +19,10 @@ El buscador desarrollado permite buscar por cualquiera de estos campos:
 * Fecha de entrada al hotel
 * Fecha de salida del hotel
 
+## Diagrama
+
+![screenshot](img/diagrama.png)
+
 
 ### Tecnologias utilizadas
 
