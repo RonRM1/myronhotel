@@ -29,16 +29,16 @@ El buscador desarrollado permite buscar por cualquiera de estos campos:
 
 ## End points
 
-#####CLIENTES
+###CLIENTES
 
 | Metodo  | ruta | descripcion|
 | ------------- | ------------- | ------------- |
 | Get | /clientes  | lista de clientes  |
 | Get  | /clientes/:id  | cliente por id  |
 | Get | /clientes/name/:nombre   | cliente por nombre  |
-| Get  | /clientes/DNI/:DNI   |  cliente por DNI |
+| Get  | /clientes/dni/:dni   |  cliente por DNI |
 | Get | /clientes/phone/:telefono  | clientes por telefono  |
-| Get | /clientes/email/:Email  | clientes por Email  |
+| Get | /clientes/email/:email  | clientes por Email  |
 | Get | /clientes/:id/reservas  | buscar por id cliente historial de reservas  |
 | Get | /clientes/:id/reservas/hoteles  | busca id cliente historial de hoteles  |
 
@@ -68,7 +68,7 @@ El buscador desarrollado permite buscar por cualquiera de estos campos:
 * GET busca id clientes su historial de hoteles
 /clientes/:id/reservas/hoteles -->
 
-#####RESERVAS
+###RESERVAS
 
 | Metodo  | ruta | descripcion|
 | ------------- | ------------- | ------------- |
@@ -89,7 +89,7 @@ El buscador desarrollado permite buscar por cualquiera de estos campos:
 * GET fecha de salida
 /reservas/checkout/fecha_salida -->
 
-#####HOTELES
+###HOTELES
 
 | Metodo  | ruta | descripcion|
 | ------------- | ------------- | ------------- |
